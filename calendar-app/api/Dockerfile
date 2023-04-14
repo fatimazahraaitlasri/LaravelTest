@@ -1,6 +1,10 @@
 FROM richarvey/nginx-php-fpm:1.7.2
 
+# Copy Laravel app files
 COPY . .
+
+# Copy deployment script
+COPY scripts/00-laravel-deploy.sh /start.d/00-laravel-deploy.sh
 
 # Image config
 ENV SKIP_COMPOSER 1
